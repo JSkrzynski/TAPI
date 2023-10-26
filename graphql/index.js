@@ -8,9 +8,17 @@ const typeDefs = `#graphql
     type Student {
         id: Int,
         name: String,
-        group: Int,
-        course: String,
-        Lecturer: String
+        group: Int
+    }
+    type Course {
+        date: String,
+        subject: String
+    }
+    type Group {
+        number: Int
+    }
+    type Room {
+        number: Int
     }
 `;
 const resolvers = {};
