@@ -1,5 +1,5 @@
 import express from "express";
-import courses from "../data/courses.json"
+import courses from "../data/courses.json" assert {type: "json"};
 
 export const courseRouter = express.Router();
 

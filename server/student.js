@@ -7,7 +7,7 @@ import * as protoLoader from "@grpc/proto-loader";
 const packageDefinition = protoLoader.loadSync("grpc/proto/schedule.proto");
 const scheduleProto = grpc.loadPackageDefinition(packageDefinition);
 
-const client = new scheduleProto.ScheduleService('123.0.0.1:9090', grpc.ChannelCredentials.createInsecure);
+const client = new scheduleProto.ScheduleService('127.0.0.1:9090', grpc.ChannelCredentials.createInsecure());
 
 export const studentRouter = express.Router();
 
@@ -25,7 +25,7 @@ studentRouter.get('/:id', (req,res) => {
     })
     const student = students.at(req.params.id)
 
-    res.send({
-        student
-    });
+    // res.send({
+    //     student
+    // });
 })

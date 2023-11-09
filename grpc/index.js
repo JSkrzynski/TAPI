@@ -6,8 +6,6 @@ const scheduleProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
 
-
-
 server.addService(scheduleProto.ScheduleService.service, {
     GetStudent: (req,res) => {
         console.log(req.request.studentId);
