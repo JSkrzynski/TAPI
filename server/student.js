@@ -1,5 +1,4 @@
 import express from "express";
-import {faker} from "@faker-js/faker";
 import students from "../data/students.json" assert {type: "json"};
 import * as grpc from "@grpc/grpc-js";
 import * as protoLoader from "@grpc/proto-loader";
