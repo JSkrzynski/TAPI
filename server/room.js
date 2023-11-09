@@ -1,11 +1,10 @@
 import express from "express";
-import {faker} from "@faker-js/faker";
+import rooms from "../data/rooms.json"
 
 export const roomRouter = express.Router();
 
 roomRouter.get('/:id/plan', (req,res) => {
-    res.json({
-        name: faker.person.fullName(),
-        schedule: schedule
+    res.send({
+        rooms
     });
 })

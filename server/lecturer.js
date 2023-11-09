@@ -1,11 +1,10 @@
 import express from "express";
-import {faker} from "@faker-js/faker";
+import lecturers from "../data/lecturers.json"
 
 export const lecturerRouter = express.Router();
 
-lecturerRouter.get('/:id/plan', (req,res) => {
-    res.json({
-        name: faker.person.fullName(),
-        schedule: schedule
+lecturerRouter.get('/all', (req,res) => {
+    res.send({
+        lecturers
     });
 })
