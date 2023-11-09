@@ -7,9 +7,14 @@ service ScheduleService {
 
 message GetStudentRequest {
     int32 studentId = 1;
+    string name = 2;
+    string surname = 3;
+    int32 groupId = 4;
 }
 
 message StudentResponse {
-    string name = 1;
-    string surname = 2;
+    int32 id = 1;
+    string name = 2;
+    string surname = 3;
+    int32 groupId = 4;
 }

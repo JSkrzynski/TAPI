@@ -9,7 +9,7 @@ const server = new grpc.Server();
 server.addService(scheduleProto.ScheduleService.service, {
     GetStudent: (req,res) => {
         console.log(req.request.studentId);
-        res(null, {name: "", surname: ""});
+        res(null, {id: req.request.studentId, name: req.request.name, surname: req.request.surname, groupId: req.request.groupId});
     }
 })
 

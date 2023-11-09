@@ -17,13 +17,13 @@ studentRouter.get('/all', (req,res) => {
     });
 })
 studentRouter.get('/:id', (req,res) => {
-    client.GetStudent({studentId: "1"},(err, response) => {
+    const student = students.at(req.params.id)
+    client.GetStudent({studentId: student.id, name: student.name, surname: student.surname, groupId: student.groupId},(err, response) => {
         if(err!==null){
             console.error(err);
         }
         res.send(response);
     })
-    const student = students.at(req.params.id)
 
     // res.send({
     //     student
