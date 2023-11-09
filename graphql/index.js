@@ -9,49 +9,56 @@ import lecturers from "../data/lecturers.json" assert {type: "json"}
 import rooms from "../data/rooms.json" assert {type: "json"}
 
 const typeDefs = `#graphql
+    type Query{
+        students: [Student]
+        courses: [Course]
+        groups: [Group]
+        lecturers: [Lecturer]
+        rooms: [Room]
+    }
     type Student {
-        id: Int,
-        name: String,
-        surname: String,
+        id: Int
+        name: String
+        surname: String
         groupId: Int
     }
     type Course {
-        id: Int,
-        name: String,
-        lecturer: Int,
-        group: Int,
-        room: Int,
-        start: String,
+        id: Int
+        name: String
+        lecturer: Int
+        group: Int
+        room: Int
+        start: String
         end: String
     }
     type Group {
-        id: Int,
-        students: [Int],
+        id: Int
+        students: [Int]
         courses: [Int]
     }
     type Lecturer {
-        id: Int,
-        name: String,
-        surname: String,
+        id: Int
+        name: String
+        surname: String
         assignedCourses: [Int]
     }
     type Room {
-        id: Int,
+        id: Int
         courses: [Int]
     }
 `;
 const resolvers = {
     Query: {
         students: () => students,
-        student: (parent, args) => students.find(s => s.id === args.id),
+        // student: (parent, args) => students.find(s => s.id === args.id),
         courses: () => courses,
-        course: (parent, args) => courses.find(s => s.id === args.id),
+        // course: (parent, args) => courses.find(s => s.id === args.id),
         groups: () => groups,
-        group: (parent, args) => groups.find(s => s.id === args.id),
+        // group: (parent, args) => groups.find(s => s.id === args.id),
         lecturers: () => lecturers,
-        lecturer: (parent, args) => lecturers.find(s => s.id === args.id),
+        // lecturer: (parent, args) => lecturers.find(s => s.id === args.id),
         rooms: () => rooms,
-        room: (parent, args) => rooms.find(s => s.id === args.id),
+        // room: (parent, args) => rooms.find(s => s.id === args.id),
     }
 };
 
