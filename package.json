@@ -10,19 +10,24 @@
     "srvGRPC": "nodemon grpc/index.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generateClient": "openapi-generator-cli generate -i swagger.json -g javascript -o ./gen"
   },
   "dependencies": {
     "@apollo/server": "^4.9.4",
     "@faker-js/faker": "^8.1.0",
     "@grpc/grpc-js": "^1.9.9",
     "@grpc/proto-loader": "^0.7.10",
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "graphql": "^16.8.1",
     "nodemon": "^3.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
