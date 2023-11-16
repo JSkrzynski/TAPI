@@ -2,11 +2,11 @@ import express from "express";
 import {createServer} from "node:http";
 import cors from "cors";
 import {faker} from "@faker-js/faker";
-import { studentRouter } from "./student.js";
-import { groupRouter } from "./group.js";
-import { lecturerRouter } from "./lecturer.js";
-import { roomRouter } from "./room.js";
-import { courseRouter } from "./course.js";
+import { studentRouter } from "./routes/student.js";
+import { groupRouter } from "./routes/group.js";
+import { lecturerRouter } from "./routes/lecturer.js";
+import { roomRouter } from "./routes/room.js";
+import { courseRouter } from "./routes/course.js";
 
 const PORT = 3000;
 const app = express();
