@@ -10,7 +10,7 @@ import { courseRouter } from "./routes/course.js";
 import swaggerUi from 'swagger-ui-express';
 import swaggerAutogen from 'swagger-autogen';
 
-const endpointsFiles = ['../server/index.js']; // Zmień na ścieżki do plików z endpointami w Twoim projekcie
+const endpointsFiles = ['../server/index.ts'];
 const doc = {}
 const swagger = await swaggerAutogen( {openApi: '3.0.0'} )( 'swagger.json',endpointsFiles,doc )
 
@@ -25,7 +25,10 @@ app.use('/group',groupRouter)
 app.use('/lecturer',lecturerRouter)
 app.use('/room',roomRouter)
 app.use('/course',courseRouter)
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swagger.data));
+if (swagger) {
+    app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swagger.data, {customCssUrl: "/swaggerDark.css"}));
+}
+
 
 
 server.listen(PORT, () => {console.log(`Started on port: ${PORT}!`)});
